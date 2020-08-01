@@ -15,7 +15,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.example.english.LichSuTest.LichSuTest;
 import com.example.english.NguPhap.Main_NguPhap;
+import com.example.english.Note.MainNote;
 import com.example.english.Question.Main_Question;
 import com.example.english.TraTu.Search_tran;
 
@@ -28,8 +30,8 @@ public class EnglishMain extends AppCompatActivity {
     ListView listView;
     Database DB = new Database(this);
     ArrayList<String> arrayList = null;
-    String[] item = {"Tra Từ Điển", "Luyện Tập", "Ghi Chú", "Ngữ Pháp", "Lịch sử Luyện Tập", "Cài Đặt"};
-    Integer[] icon = {R.drawable.timkiem, R.drawable.tets, R.drawable.ghi_chu, R.drawable.book2, R.drawable.book, R.drawable.settinghaha};
+    String[] item = {"Tra Từ Điển", "Luyện Tập", "Ghi Chú", "Ngữ Pháp", "Lịch sử Luyện Tập", "Thoát"};
+    Integer[] icon = {R.drawable.timkiem, R.drawable.tets, R.drawable.ghi_chu, R.drawable.book2, R.drawable.book, R.drawable.exit};
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,11 +72,27 @@ public class EnglishMain extends AppCompatActivity {
                     startActivity(intent);
                 }
 
+                if (position == 2) {
+                    Intent in = new Intent(getApplication(), MainNote.class);
+                    startActivity(in);
+                }
+
                 if(position == 3)
                 {
                     Intent intent = new Intent(getApplication(), Main_NguPhap.class);
                     startActivity(intent);
                 }
+
+                if (position == 4) {
+                    Intent intent = new Intent(getApplication(), LichSuTest.class);
+                    startActivity(intent);
+                }
+                if (position == 5) {
+                    finish();
+                    System.exit(0);
+                }
+
+
             }
         });
     }

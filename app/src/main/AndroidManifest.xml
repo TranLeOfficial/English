@@ -49,6 +49,17 @@
             android:name=".Question.Main_Question"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
+<!--        LichSuTest-->
+        <activity
+            android:name=".LichSuTest.LichSuTest"
+            android:parentActivityName=".EnglishMain">
+        </activity>
+<!--        Setting-->
+<!--        <activity-->
+<!--            android:name=".Setting"-->
+<!--            android:parentActivityName=".EnglishMain">-->
+<!--        </activity>-->
+
 
     </application>
 
